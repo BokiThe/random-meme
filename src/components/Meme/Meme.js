@@ -73,15 +73,19 @@ import styles from "./styles.module.css";
     return (
        memes.length ? 
        <div className={styles.container}>
+         <h4>Fill the descriptions to make your own meme and click <span>generate</span> or just click <span>skip</span> to find meme you want </h4>
         <button onClick={generateMeme} className={styles.generate}>Generate</button>
         <button onClick={() => setMemeIndex(memeIndex + 1)} className={styles.skip}>skip</button>
         {
             captions.map((cap, i)=>(
    
-                <input key={i} onChange={(e)=> updateCaptions(e, i)} type="text"  id={`description${i}`} placeholder={`description ${i+1}`} />
+                <input key={i} className={styles.caption} onChange={(e)=> updateCaptions(e, i)} type="text"  id={`description${i}`} placeholder={`description ${i+1}`} />
             ))
         }
-        <img src={memes[memeIndex].url} alt={memes[memeIndex].name}  />
+    
+            <img src={memes[memeIndex].url} alt={memes[memeIndex].name}   />
+        
+        
        </div> 
        : 
        <div>loading</div>

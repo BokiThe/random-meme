@@ -1,7 +1,3 @@
-.container {
-    margin-top: 50px;
-}
-
 .copy {
     background-color: #0275d8;
     margin-top: 20px;
@@ -9,4 +5,16 @@
 
 .home {
     background-color: #f0ad4e;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+
+    .copy,
+    .home {
+        width: 80%;
+        display: block;
+    }
+
 }

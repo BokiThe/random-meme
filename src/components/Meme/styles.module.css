@@ -1,11 +1,32 @@
-.container {
-    margin-top: 50px;
-}
-
 .skip {
     background-color: #f0ad4e;
 }
 
 .generate {
     background-color: #0275d8;
+}
+
+.caption {
+    box-sizing: border-box;
+    display: block;
+    padding: 10px;
+    width: 350px;
+    margin: auto;
+    margin-bottom: 15px;
+    border: 1px solid lightblue;
+    border-radius: 8px;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+
+    .caption,
+    .skip,
+    .generate {
+        width: 80%;
+        display: block;
+
+    }
+
 }

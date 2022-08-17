@@ -17,6 +17,7 @@ const MemeGenerated = () => {
     }
   return (
     <div className={styles.container}>
+        <h4>Now click <span>copy link</span> to copy the image url or <span>make more memes</span> to create new one </h4>
         <button onClick={()=> navigate('/')} className={styles.home}>Make More Memes</button>
         {
             url && <img src={url} alt={url} />

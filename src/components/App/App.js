@@ -5,14 +5,19 @@ import {
     Route,
   } from "react-router-dom";
 import MemeGenerated from "../MemeGenerated/MemeGenerated";
-
+import styles from './styles.module.css'
 const App = () => {
     return (
-        <Routes>
-            <Route path="/" element={<Meme />} />
-            <Route path="generated" element={<MemeGenerated />} />
-        </Routes>
-        
+        <div className={styles.app}>   
+            <h1>WELCOME TO MEME CREATOR</h1>
+            
+
+            <Routes>
+                <Route path="/" element={<Meme />} />
+                <Route path="generated" element={<MemeGenerated />} />
+            </Routes>
+            
+        </div>
     )
 }
 
