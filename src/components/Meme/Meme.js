@@ -84,7 +84,7 @@ import styles from "./styles.module.css";
          <h4>Fill the descriptions to make your own meme and click <span>generate</span> or just click <span>skip</span> to find meme you want </h4>
         <button onClick={generateMeme} className={styles.generate}>Generate</button>
         <button onClick={() => setMemeIndex(memeIndex + 1)} className={styles.skip}>skip</button>
-            <select name="Select meme" id="selectMeme" className={styles.caption}  onChange={handleSelect}>
+            <select name="Select meme" id="selectMeme" value={memes[memeIndex].name} className={styles.caption}  onChange={handleSelect}>
                 
             {
                 memes.map((meme, i)=>( 
@@ -97,7 +97,7 @@ import styles from "./styles.module.css";
         {
             captions.map((cap, i)=>(
    
-                <input key={i} className={styles.caption} onChange={(e)=> updateCaptions(e, i)} type="text"  id={`description${i}`} placeholder={`description ${i+1}`} />
+                <input key={i} className={styles.caption} vaz onChange={(e)=> updateCaptions(e, i)} type="text"  id={`description${i}`} placeholder={`description ${i+1}`} />
             ))
         }
     
