@@ -6,7 +6,6 @@ import styles from "./styles.module.css";
     const [memes, setMemes] = useState([]);
     const [memeIndex , setMemeIndex] = useState(0);
     const [captions, setCaptions] = useState([]);
-    const [selectedMeme, setSelectedMeme] = useState(0);
     const history = useNavigate(); // instead of useHistory in router v6 useNavigate
 
 
