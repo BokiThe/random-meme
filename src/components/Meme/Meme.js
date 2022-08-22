@@ -6,6 +6,7 @@ import styles from "./styles.module.css";
     const [memes, setMemes] = useState([]);
     const [memeIndex , setMemeIndex] = useState(0);
     const [captions, setCaptions] = useState([]);
+    const [selectedMeme, setSelectedMeme] = useState(0);
     const history = useNavigate(); // instead of useHistory in router v6 useNavigate
 
 
@@ -37,8 +38,10 @@ import styles from "./styles.module.css";
             method: 'POST',
             body: formData,
         }).then(res => {
+           
             res.json().then(res => {
                 history(`/generated?url=${res.data.url}`)
+               
             })
         })
     };
@@ -52,6 +55,12 @@ import styles from "./styles.module.css";
         }
       };
 
+      //handle select function
+      const handleSelect = (e)=> {
+        e.preventDefault();
+        memes.findIndex((curr, i) => curr.name === e.target.value ? setMemeIndex(i) : false)
+      };
+    
     useEffect(() => {
         fetch('https://api.imgflip.com/get_memes')
         .then(res => res.json())
@@ -76,6 +85,16 @@ import styles from "./styles.module.css";
          <h4>Fill the descriptions to make your own meme and click <span>generate</span> or just click <span>skip</span> to find meme you want </h4>
         <button onClick={generateMeme} className={styles.generate}>Generate</button>
         <button onClick={() => setMemeIndex(memeIndex + 1)} className={styles.skip}>skip</button>
+            <select name="Select meme" id="selectMeme" className={styles.caption}  onChange={handleSelect}>
+                
+            {
+                memes.map((meme, i)=>( 
+                    <option key={i} id={i} value={meme.name}>{meme.name}</option>
+                ))
+            }
+        </select>
+       
+
         {
             captions.map((cap, i)=>(
    
@@ -84,8 +103,7 @@ import styles from "./styles.module.css";
         }
     
             <img src={memes[memeIndex].url} alt={memes[memeIndex].name}   />
-        
-        
+
        </div> 
        : 
        <div>loading</div>
