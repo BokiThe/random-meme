@@ -10,6 +10,7 @@ const Meme = () => {
 
   useEffect(() => {
     console.log("HEllo World!");
+    console.log("Nova poruka");
   }, []);
 
   // updaate captions functions that returns the input fields value
