@@ -9,7 +9,7 @@ const Meme = () => {
   const history = useNavigate(); // instead of useHistory in router v6 useNavigate
 
   useEffect(() => {
-    console.log("HEllo!");
+    console.log("HEllo World!");
   }, []);
 
   // updaate captions functions that returns the input fields value
